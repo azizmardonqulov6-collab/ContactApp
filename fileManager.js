@@ -17,7 +17,9 @@ const addContact = ((newData) =>
     }
 	let addData = contactData.push(...newData);
 	add = JSON.stringify(contactData);
+
 	fs.writeFileSync("./data/contacts.json", add );
+	
 	console.log("Malumot Contact larga qo'shildi");
 })
 

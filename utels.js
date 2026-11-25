@@ -46,22 +46,18 @@ class Comands {
 	}
 	updateCon(phone ,name , email , newPhone)
 	{
-		let index ; 
 		console.log(phone , name , email , newPhone);
-		for(let i = 0 ; i < data.length ; i++){
-			if(data[i].phone == phone){
-				data[i].name = name ? name : data[i].name;
-				data[i].phone = newPhone ? newPhone : data[i].phone;
-				data[i].email = email ? email : data[i].email;   
-				data = JSON.stringify(data , null , 2);
-	                        fs.writeFileSync("./data/contacts.json" , data);
-        	                console.log("Kontact O'rgartirildi");
+		    for(let i = 0 ; i < data.length ; i++){
+                        if(data[i].phone == phone){
+                                data[i].name = name ? name : data[i].name;
+                                data[i].phone = newPhone ? newPhone : data[i].phone;
+                                data[i].email = email ? email : data[i].email;
+                                data = JSON.stringify(data , null , 2);
+                                fs.writeFileSync("./data/contacts.json" , data);
+                                console.log("Kontact O'rgartirildi");
 
-			}else{
-				console.log("Bu Kontakt mavjud emas");
-				break;
-			}
-		}
+                        }
+                }
 	}
 	searchCon(name){
 		let searchContact; 
